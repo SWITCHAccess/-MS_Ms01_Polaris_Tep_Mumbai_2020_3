@@ -96,7 +96,10 @@ function  Faker (opts) {
   self.vehicle = new Vehicle(self);
 
   var Laptop = require('./laptop');
-  self.laptop = new Laptop(self)
+  self.laptop = new Laptop(self);
+  
+  var Departments = require('./departments');
+  self.departments = new Departments(self)
 
   var _definitions = {
     "name": ["first_name", "last_name", "prefix", "suffix", "gender", "title", "male_prefix", "female_prefix", "male_first_name", "female_first_name", "male_middle_name", "female_middle_name", "male_last_name", "female_last_name"],
@@ -113,6 +116,7 @@ function  Faker (opts) {
     "date": ["month", "weekday"],
     "vehicle": ["vehicle", "manufacturer", "model", "type", "fuel", "vin", "color"],
     "laptop" : ["model","company","fault"],
+	"departments": ["engineering", "semester", "division", "head"],
     "title": "",
     "separator": ""
   };
